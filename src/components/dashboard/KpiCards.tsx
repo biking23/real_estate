@@ -7,7 +7,7 @@ type Props = {
   priorLabel: string;
 };
 
-function Delta({ value, invert }: { value: number | null; invert?: boolean }) {
+function Delta({ value, invert }: { value: number | null; invert?: boolean | undefined }) {
   if (value === null || !isFinite(value)) {
     return <span className="text-xs text-muted-foreground">no prior-year data</span>;
   }

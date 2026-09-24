@@ -28,8 +28,8 @@ export function monthKey(date: string): string {
 }
 
 export function monthLabel(key: string): string {
-  const [y, m] = key.split("-").map(Number);
-  return new Date(Date.UTC(y, m - 1, 1)).toLocaleDateString("en-US", {
+  const [y, m] = key.split("-");
+  return new Date(Date.UTC(Number(y), Number(m) - 1, 1)).toLocaleDateString("en-US", {
     month: "long",
     year: "numeric",
     timeZone: "UTC",
@@ -37,13 +37,14 @@ export function monthLabel(key: string): string {
 }
 
 export function monthLabelShort(key: string): string {
-  const [y, m] = key.split("-").map(Number);
-  return new Date(Date.UTC(y, m - 1, 1)).toLocaleDateString("en-US", {
+  const [y, m] = key.split("-");
+  return new Date(Date.UTC(Number(y), Number(m) - 1, 1)).toLocaleDateString("en-US", {
     month: "short",
     year: "2-digit",
     timeZone: "UTC",
   });
 }
+
 
 export function priorYearKey(key: string): string {
   const [y, m] = key.split("-");

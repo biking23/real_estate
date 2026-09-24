@@ -12,7 +12,11 @@ async function fetchTransactions(): Promise<Txn[]> {
     .limit(5000);
 
   if (error) throw new Error(error.message);
-  return (data ?? []).map((r) => ({ ...r, amount: r.amount === null ? null : Number(r.amount) })) as Txn[];
+  return ((data ?? []) as Txn[]).map((r) => ({
+    ...r,
+    amount: r.amount === null ? null : Number(r.amount),
+  }));
+
 }
 
 export const transactionsQuery = queryOptions({
