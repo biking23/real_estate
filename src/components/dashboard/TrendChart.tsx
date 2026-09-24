@@ -60,7 +60,7 @@ export function TrendChart({ data, selectedMonth }: { data: MonthlySeriesPoint[]
             {series.map((s) => (
               <Line
                 key={s.key}
-                type="monotone"
+                type="linear"
                 dataKey={s.key}
                 name={s.name}
                 stroke={s.color}
