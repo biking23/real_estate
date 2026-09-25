@@ -1,5 +1,82 @@
 import { useState, useRef } from "react";
 import { Send, Sparkles, Loader2 } from "lucide-react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import type { Components } from "react-markdown";
+
+// Tailwind preflight resets headings, lists, and tables to unstyled defaults.
+// These renderers restore readable presentation scoped to analyst bubbles only.
+const MARKDOWN_COMPONENTS: Components = {
+  // Paragraphs ----------------------------------------------------------------
+  p: ({ children }) => (
+    <p className="mb-3 last:mb-0 leading-relaxed">{children}</p>
+  ),
+  // Headings ------------------------------------------------------------------
+  h1: ({ children }) => (
+    <h1 className="mt-5 mb-2 text-base font-bold leading-snug first:mt-0">
+      {children}
+    </h1>
+  ),
+  h2: ({ children }) => (
+    <h2 className="mt-4 mb-2 text-sm font-bold leading-snug first:mt-0">
+      {children}
+    </h2>
+  ),
+  h3: ({ children }) => (
+    <h3 className="mt-3 mb-1 text-sm font-semibold leading-snug first:mt-0">
+      {children}
+    </h3>
+  ),
+  // Lists ---------------------------------------------------------------------
+  ul: ({ children }) => (
+    <ul className="mb-3 list-disc pl-5 space-y-1 last:mb-0">{children}</ul>
+  ),
+  ol: ({ children }) => (
+    <ol className="mb-3 list-decimal pl-5 space-y-1 last:mb-0">{children}</ol>
+  ),
+  li: ({ children }) => (
+    <li className="leading-relaxed">{children}</li>
+  ),
+  // Inline --------------------------------------------------------------------
+  strong: ({ children }) => (
+    <strong className="font-semibold">{children}</strong>
+  ),
+  em: ({ children }) => <em className="italic">{children}</em>,
+  code: ({ children }) => (
+    <code className="rounded bg-black/10 px-1 py-0.5 font-mono text-xs dark:bg-white/10">
+      {children}
+    </code>
+  ),
+  pre: ({ children }) => (
+    <pre className="mb-3 overflow-x-auto rounded bg-black/10 p-3 font-mono text-xs leading-relaxed dark:bg-white/10 last:mb-0">
+      {children}
+    </pre>
+  ),
+  // Tables — wrapped in a scrollable container for narrow screens ------------
+  table: ({ children }) => (
+    <div className="mb-3 overflow-x-auto rounded last:mb-0" role="region" aria-label="Data table">
+      <table className="w-full border-collapse text-xs">{children}</table>
+    </div>
+  ),
+  thead: ({ children }) => (
+    <thead className="border-b border-secondary-foreground/20 bg-black/5 dark:bg-white/5">
+      {children}
+    </thead>
+  ),
+  tbody: ({ children }) => <tbody className="divide-y divide-secondary-foreground/10">{children}</tbody>,
+  tr: ({ children }) => <tr>{children}</tr>,
+  th: ({ children }) => (
+    <th
+      scope="col"
+      className="px-3 py-2 text-left font-semibold text-secondary-foreground"
+    >
+      {children}
+    </th>
+  ),
+  td: ({ children }) => (
+    <td className="px-3 py-2 text-secondary-foreground">{children}</td>
+  ),
+};
 
 const SUGGESTIONS = [
   "Why did NOI decline in August?",
@@ -103,10 +180,19 @@ export function AnalystChat({ context }: { context: string }) {
               className={
                 m.role === "user"
                   ? "ml-auto max-w-[85%] rounded-lg bg-primary px-4 py-2.5 text-sm text-primary-foreground"
-                  : "max-w-[85%] rounded-lg bg-secondary px-4 py-2.5 text-sm text-secondary-foreground"
+                  : "max-w-[85%] rounded-lg bg-secondary px-4 py-2.5 text-sm text-secondary-foreground prose prose-sm dark:prose-invert max-w-none"
               }
             >
-              {m.text}
+              {m.role === "analyst" ? (
+                <ReactMarkdown
+                  remarkPlugins={[remarkGfm]}
+                  components={MARKDOWN_COMPONENTS}
+                >
+                  {m.text}
+                </ReactMarkdown>
+              ) : (
+                m.text
+              )}
             </div>
           ))}
         </div>
