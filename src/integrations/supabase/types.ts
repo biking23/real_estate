@@ -14,6 +14,45 @@ export type Database = {
   }
   public: {
     Tables: {
+      portfolio_context: {
+        Row: {
+          category: string | null
+          context: string
+          id: string
+        }
+        Insert: {
+          category?: string | null
+          context: string
+          id?: string
+        }
+        Update: {
+          category?: string | null
+          context?: string
+          id?: string
+        }
+        Relationships: []
+      }
+      portfolio_documents: {
+        Row: {
+          content: string | null
+          embedding: string | null
+          id: number
+          metadata: Json | null
+        }
+        Insert: {
+          content?: string | null
+          embedding?: string | null
+          id?: number
+          metadata?: Json | null
+        }
+        Update: {
+          content?: string | null
+          embedding?: string | null
+          id?: number
+          metadata?: Json | null
+        }
+        Relationships: []
+      }
       transactions: {
         Row: {
           amount: number | null
@@ -58,7 +97,15 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      match_documents: {
+        Args: { filter?: Json; match_count?: number; query_embedding: string }
+        Returns: {
+          content: string
+          id: number
+          metadata: Json
+          similarity: number
+        }[]
+      }
     }
     Enums: {
       [_ in never]: never
