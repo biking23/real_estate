@@ -109,7 +109,7 @@ export function AnalystChat({ context }: { context: string }) {
     setInput("");
     setLoading(true);
 
-    const N8N_URL = import.meta.env['VITE_N8N_CHAT_URL'] as string | undefined;
+    const N8N_URL = import.meta.env.VITE_N8N_CHAT_URL as string | undefined;
 
     // Graceful fallback when the env var is not configured.
     if (!N8N_URL) {
