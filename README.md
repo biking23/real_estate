@@ -34,22 +34,37 @@ LLM
 
 ## Example Questions
 
-"What caused NOI to change this month?"
+"Why did NOI decline in August?"
+"Which property had the largest increase in operating expenses?"
+"How did August 2026 compare with August 2025?"
+"What were our largest capital expenses?"
+"How much did we spend on plumbing this year?"
+"Show me the transactions behind the increase in maintenance expenses?"
 ...
 
 ## Product Decisions
 
-Why RAG?
-Why structured financial data?
-How did we handle hallucinations?
+### Why RAG? 
+Financial questions require context from the user's underlying data. We use retrieval-augmented generation (RAG) to provide the AI with relevant financial context when generating responses.
+### Why structured financial data? 
+Financial data is stored in a structured database so that portfolio metrics and transactions can be consistently retrieved, analyzed, and traced back to the underlying data.
+### How did we address hallucinations?
+The AI is given explicit guidelines to ground responses in the available financial data and avoid generating unsupported information. Retrieval provides relevant context for the model, while the workflow limits the information available to the AI.
+The goal is not to eliminate hallucinations entirely, but to constrain the system so that financial responses are grounded in the available data.
 
 ## Limitations
 
-What the MVP doesn't do yet.
+The current MVP is intentionally constrained to the financial data and questions supported by the underlying database and AI workflow. The system does not yet ingest new financial documents automatically, perform unrestricted SQL analysis, or access external market data.
 
 ## Next Iteration
 
 Data ingestion
+Replace the seed data used in the MVP with a secure data-ingestion workflow for real financial data. The prototype uses synthetic/seed data because actual portfolio data was not appropriate for a public demonstration.
+Actions
+Allow users to take actions from within the financial workflow, such as drafting an email to a supplier about an invoice or requesting clarification from a property manager.
+
+Broader financial analysis
+Expand beyond historical portfolio reporting to support scenario analysis, external benchmarks, and more complex financial questions.
 ...
 
 ## Development
