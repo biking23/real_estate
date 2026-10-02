@@ -30,27 +30,20 @@ Architecture diagram
 
 ## Tech Stack
 
-Lovable
-Supabase / PostgreSQL
-n8n
-RAG
-LLM
-...
+- **Frontend:** React + TypeScript + TanStack Start + Vite
+- **UI:** Tailwind CSS + Radix UI
+- **AI & Workflow:** n8n + OpenAI API / AI Agent + RAG
+- **Data:** Supabase / PostgreSQL + pgvector
+- **Hosting / Deployment:** Lovable
 
 ## Example Questions
 
-"Why did NOI decline in August?"
-
-"Which property had the largest increase in operating expenses?"
-
-"How did August 2026 compare with August 2025?"
-
-"What were our largest capital expenses?"
-
-"How much did we spend on plumbing this year?"
-
-"Show me the transactions behind the increase in maintenance expenses?"
-...
+- "Why did NOI decline in August?"
+- "Which property had the largest increase in operating expenses?"
+- "How did August 2026 compare with August 2025?"
+- "What were our largest capital expenses?"
+- "How much did we spend on plumbing this year?"
+- "Show me the transactions behind the increase in maintenance expenses?"
 
 ## Product Decisions
 
