@@ -1,16 +1,56 @@
-# Real_Estate
+# AI Financial Analyst
 
-Implement exactly the screenshot and nothing else
+An interactive financial dashboard with an embedded AI financial analyst that enables users to ask questions about their financial data and receive answers grounded in the underlying data.
 
-This project was built with [Lovable](https://lovable.dev).
+## The Problem
 
-## Build with Lovable
+Most financial reporting is static. Reports and slides are generated, reviewed, and distributed, but follow-up questions often require leaving the report, working in another application such as Excel, or asking an analyst to investigate and respond later.
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/376d8302-c35c-4ae0-99cc-c183f00a6d90).
+## The Solution
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+An interactive financial dashboard that allows users to ask questions about their underlying financial data and receive responses grounded in that data.
+Instead of treating the monthly business review as a static report, the AI Financial Analyst turns it into an interactive experience where users can investigate performance and ask follow-up questions.
+
+## Demo
+
+[Live Application]
+[10-minute Demo Video]
+
+## Product Documentation
+https://app.notion.com/p/Real-Estate-Financial-Analyst-PRD-3e5e7060762480d99b65c1bcc7812d52
+
+## How It Works
+
+Architecture diagram
+
+## Tech Stack
+
+Lovable
+Supabase / PostgreSQL
+n8n
+RAG
+LLM
+...
+
+## Example Questions
+
+"What caused NOI to change this month?"
+...
+
+## Product Decisions
+
+Why RAG?
+Why structured financial data?
+How did we handle hallucinations?
+
+## Limitations
+
+What the MVP doesn't do yet.
+
+## Next Iteration
+
+Data ingestion
+...
 
 ## Development
 
