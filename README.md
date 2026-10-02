@@ -15,13 +15,17 @@ Instead of treating the monthly business review as a static report, the AI Finan
 
 [Live Application]
 [10-minute Demo Video]
+![AI Financial Analyst dashboard](./assets/Landing_Page1.png)
+![AI Financial Analyst dashboard](./assets/Agent_Demo.png)
 
 ## Product Documentation
+Product Requirements Document:
 https://app.notion.com/p/Real-Estate-Financial-Analyst-PRD-3e5e7060762480d99b65c1bcc7812d52
 
 ## How It Works
 
 Architecture diagram
+![Architecture Diagram](./assets/Architecture Diagram.png)
 
 ## Tech Stack
 
