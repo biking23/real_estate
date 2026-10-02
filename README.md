@@ -26,7 +26,7 @@ https://app.notion.com/p/Real-Estate-Financial-Analyst-PRD-3e5e7060762480d99b65c
 
 Architecture diagram
 
-![Architecture Diagram](./assets/Architecture Diagram.png)
+![Architecture Diagram](./assets/Architecture_Diagram.png)
 
 ## Tech Stack
 
