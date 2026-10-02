@@ -40,10 +40,15 @@ LLM
 ## Example Questions
 
 "Why did NOI decline in August?"
+
 "Which property had the largest increase in operating expenses?"
+
 "How did August 2026 compare with August 2025?"
+
 "What were our largest capital expenses?"
+
 "How much did we spend on plumbing this year?"
+
 "Show me the transactions behind the increase in maintenance expenses?"
 ...
 
