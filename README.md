@@ -16,11 +16,13 @@ Instead of treating the monthly business review as a static report, the AI Finan
 [Live Application]
 [10-minute Demo Video]
 ![AI Financial Analyst dashboard](./assets/Landing_Page1.png)
-![AI Financial Analyst dashboard](./assets/Agent_Demo.png)
+![AI Financial Analyst AI Analyst](./assets/Agent_Demo.png)
 
 ## Product Documentation
-Product Requirements Document:
-https://app.notion.com/p/Real-Estate-Financial-Analyst-PRD-3e5e7060762480d99b65c1bcc7812d52
+
+The application combines a React frontend, Supabase/PostgreSQL database, and n8n AI workflow. User questions are sent through the workflow, which retrieves relevant financial context and provides it to the AI agent before generating a response.
+
+[Product Requirements Document](https://app.notion.com/p/Real-Estate-Financial-Analyst-PRD-3e5e7060762480d99b65c1bcc7812d52)
 
 ## How It Works
 
@@ -68,14 +70,3 @@ Allow users to take actions from within the financial workflow, such as drafting
 
 ### Broader financial analysis
 Expand beyond historical portfolio reporting to support scenario analysis, external benchmarks, and more complex financial questions.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
