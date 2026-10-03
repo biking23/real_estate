@@ -61,14 +61,13 @@ The current MVP is intentionally constrained to the financial data and questions
 
 ## Next Iteration
 
-Data ingestion
+### Data ingestion
 Replace the seed data used in the MVP with a secure data-ingestion workflow for real financial data. The prototype uses synthetic/seed data because actual portfolio data was not appropriate for a public demonstration.
-Actions
+### Actions
 Allow users to take actions from within the financial workflow, such as drafting an email to a supplier about an invoice or requesting clarification from a property manager.
 
-Broader financial analysis
+### Broader financial analysis
 Expand beyond historical portfolio reporting to support scenario analysis, external benchmarks, and more complex financial questions.
-...
 
 ## Development
 
