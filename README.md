@@ -20,11 +20,11 @@ Instead of treating the monthly business review as a static report, the AI Finan
 
 ## Product Documentation
 
-The application combines a React frontend, Supabase/PostgreSQL database, and n8n AI workflow. User questions are sent through the workflow, which retrieves relevant financial context and provides it to the AI agent before generating a response.
-
 [Product Requirements Document](https://app.notion.com/p/Real-Estate-Financial-Analyst-PRD-3e5e7060762480d99b65c1bcc7812d52)
 
 ## How It Works
+
+The application combines a React frontend, Supabase/PostgreSQL database, and n8n AI workflow. User questions are sent through the workflow, which retrieves relevant financial context and provides it to the AI agent before generating a response.
 
 Architecture diagram
 
